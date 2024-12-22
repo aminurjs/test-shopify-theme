@@ -1,12 +1,15 @@
 <html>
-    <head>
-        {{ content_for_header }}
-    </head>
-    <body>
-        <header>This is a header</header>
-        <main id="main" role="main">
-        {{ content_for_layout }}
-        </main>
-        <footer>This is footer</footer>
-    </body>
+  <head>
+    {{ content_for_header }}
+    {{ 'tailwind.min.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    <header>
+      <p class="text-2xl font-bold">npm run watch</p>
+    </header>
+    <main id="main" role="main">
+      {{ content_for_layout }}
+    </main>
+    <footer>This is footer</footer>
+  </body>
 </html>
