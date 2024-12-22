@@ -9,10 +9,17 @@
  */
 {
   "sections": {
+    "banner_EDHXat": {
+      "type": "banner",
+      "settings": {}
+    },
     "banner": {
       "type": "banner",
       "settings": {}
     }
   },
-  "order": ["banner"]
+  "order": [
+    "banner_EDHXat",
+    "banner"
+  ]
 }
