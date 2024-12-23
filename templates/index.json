@@ -23,11 +23,7 @@
           "grey-sofa"
         ]
       }
-    },
-    "hero": {
-      "type": "hero",
-      "settings": {}
     }
   },
-  "order": ["hero", "product_grid_XRdXr6"]
+  "order": ["product_grid_XRdXr6"]
 }
