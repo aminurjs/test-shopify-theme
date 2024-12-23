@@ -24,10 +24,10 @@
         ]
       }
     },
-    "banner": {
-      "type": "banner",
+    "hero": {
+      "type": "hero",
       "settings": {}
     }
   },
-  "order": ["banner", "product_grid_XRdXr6"]
+  "order": ["hero", "product_grid_XRdXr6"]
 }
