@@ -1,0 +1,60 @@
+<div class="navbar">
+  <div class="navbar-container">
+    <!-- Dynamic Logo -->
+    <a href="{{ shop.url }}" class="navbar-logo">
+      {{ section.settings.logo | image_url | image_tag }}
+    </a>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="navbar-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Dynamic Menu -->
+    <ul class="navbar-menu">
+      {% for link in section.settings.menu_items %}
+        <li class="navbar-item">
+          <a href="{{ link.url }}" class="navbar-link">{{ link.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Dynamic Action Button -->
+    <a href="{{ section.settings.button_url }}" class="navbar-action-button">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Dynamic Navbar",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Action Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Action Button URL",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [{ "name": "Navbar" }]
+}
+{% endschema %}
