@@ -1,11 +1,88 @@
 <section>
-  <p>Hello world</p>
+  <div
+    class="relative w-full bg-cover bg-center py-36"
+    style="background-image: url('{{ "bg.jpg" |asset_url }}'); text-align: {{ section.settings.content_alignment }};"
+  >
+    <div class="container mx-auto">
+      <div class="max-w-2xl mx-auto">
+        {% if section.settings.subtitle != blank %}
+          <p class="text-lg mb-4 text-[#333]">{{ section.settings.subtitle }}</p>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h1 class="text-5xl font-semibold text-[#333] mb-10">{{ section.settings.title }}</h1>
+        {% endif %}
+
+        {% if section.settings.button_text != blank %}
+          <a
+            href="{{ section.settings.button_url }}"
+            class="px-6 py-3 bg-[#f5ab1e] text-white font-semibold rounded-full"
+          >
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </section>
 
 {% schema %}
 {
-  "name": "banner",
-  "settings": [],
-  "presets": [{ "name": "banner" }]
+  "name": "Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Banner Title",
+      "default": "Your Banner Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Banner Subtitle",
+      "default": "Banner Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "default": "#"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner"
+    }
+  ]
 }
 {% endschema %}
