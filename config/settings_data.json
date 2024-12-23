@@ -8,5 +8,18 @@
  * ------------------------------------------------------------
  */
 {
-  "current": {}
+  "current": {
+    "sections": {
+      "navbar": {
+        "type": "navbar",
+        "settings": {
+          "logo": "shopify://shop_images/flowers-in-yellow-watering-can_925x_a3b4c7b9-21b7-4556-b14a-2bbc4e834c01.jpg",
+          "menu": "main-menu",
+          "button_text": "Shop Now",
+          "button_url": "shopify://collections/all"
+        }
+      }
+    },
+    "content_for_index": []
+  }
 }
