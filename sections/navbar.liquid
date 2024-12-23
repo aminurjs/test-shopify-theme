@@ -134,14 +134,17 @@
           </li>
         {% endfor %}
       </ul>
-      <a href="tel:12345678" class="flex items-center gap-2 text-[#333333] hover:text-[#f5ab1e]">
+      <a
+        href="tel:{{ section.settings.call_number }}"
+        class="flex items-center gap-2 text-[#333333] hover:text-[#f5ab1e]"
+      >
         <span class="text-3xl">
           <i class="fa-solid fa-headphones"></i>
         </span>
         <span class="flex flex-col items-start">
-          <span class="block text-xs font-semibold uppercase ">Hotline: </span>
+          <span class="block text-xs font-semibold uppercase ">{{ section.settings.call_text }} </span>
 
-          <span class="text-[11px] ">+12345678</span>
+          <span class="text-[11px] ">{{ section.settings.call_number_placeholder }}</span>
         </span>
       </a>
     </div>
@@ -165,15 +168,21 @@
     },
     {
       "type": "text",
-      "id": "button_text",
-      "label": "Action Button Text",
-      "default": "Shop Now"
+      "id": "call_text",
+      "label": "Call Group Text",
+      "default": "Hotline:"
     },
     {
-      "type": "url",
-      "id": "button_url",
-      "label": "Action Button URL",
-      "default": "/collections/all"
+      "type": "text",
+      "id": "call_number_placeholder",
+      "label": "Call Group Number Placeholder",
+      "default": "+123-45-678"
+    },
+    {
+      "type": "text",
+      "id": "call_number",
+      "label": "Call Group Number ",
+      "default": "+12345678"
     }
   ],
   "presets": [{ "name": "Navbar" }]
