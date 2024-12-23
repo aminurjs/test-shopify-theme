@@ -1,0 +1,44 @@
+<div class="bg-white py-8">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {% for product in section.settings.products %}
+        <div class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transition duration-300">
+          <a href="{{ product.url }}" class="block">
+            <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-t-lg">
+              <img
+                src="{{ product.featured_image | image_url: width:500, height:500 }}"
+                alt="{{ product.title }}"
+                width="500"
+                height="500"
+                class="object-cover w-full h-full"
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-800 truncate">{{ product.title }}</h3>
+              <p class="text-sm text-gray-600 mt-1">{{ product.vendor }}</p>
+              <p class="text-lg font-medium text-orange-600 mt-2">{{ product.price | money }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Select Products",
+      "limit": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}
