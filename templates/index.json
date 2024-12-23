@@ -12,7 +12,21 @@
     "banner": {
       "type": "banner",
       "settings": {}
+    },
+    "product_grid_XRdXr6": {
+      "type": "product-grid",
+      "settings": {
+        "products": [
+          "biodegradable-cardboard-pots",
+          "black-bean-bag",
+          "brown-throw-pillows",
+          "cream-sofa"
+        ]
+      }
     }
   },
-  "order": ["banner"]
+  "order": [
+    "banner",
+    "product_grid_XRdXr6"
+  ]
 }
