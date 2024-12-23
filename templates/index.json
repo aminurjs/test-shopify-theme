@@ -9,10 +9,6 @@
  */
 {
   "sections": {
-    "banner": {
-      "type": "banner",
-      "settings": {}
-    },
     "product_grid_XRdXr6": {
       "type": "product-grid",
       "settings": {
@@ -20,13 +16,16 @@
           "biodegradable-cardboard-pots",
           "black-bean-bag",
           "brown-throw-pillows",
-          "cream-sofa"
+          "cream-sofa",
+          "bedside-table",
+          "copper-light",
+          "gardening-hand-trowel",
+          "grey-sofa"
         ]
       }
     }
   },
   "order": [
-    "banner",
     "product_grid_XRdXr6"
   ]
 }
