@@ -1,30 +1,150 @@
-<div class="navbar">
-  <div class="navbar-container">
-    <!-- Dynamic Logo -->
-    <a href="{{ shop.url }}" class="navbar-logo">
-      <img src="{{ section.settings.logo | image_url: width: 200, height: 60 }}" alt="Logo" height="80" width="200">
-    </a>
+{{ 'navbar.css' | asset_url | stylesheet_tag }}
+<div class="shadow">
+  <div class="max-w-screen-xl w-full mx-auto px-2.5">
+    <div class="flex items-center justify-between gap-5 py-4">
+      <div class="w-1/3">
+        <a href="{{ shop.url }}" class="navbar-logo">
+          {% if section.settings.logo != blank %}
+            <img
+              src="{{ section.settings.logo | image_url: width: 107, height: 54 }}"
+              alt="Logo"
+              width="107"
+              height="54"
+            >
+          {% else %}
+            <img
+              src="{{ 'logo.svg' | asset_url}}"
+              alt="Logo"
+              width="107"
+              height="54"
+            >
+          {% endif %}
+        </a>
+      </div>
 
-    <!-- Hamburger Menu for Mobile -->
-    <div class="navbar-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <form action="{{ routes.search_url }}" class="w-1/3 my-auto">
+        <div class="relative flex items-center">
+          <input
+            class=" w-full h-10 rounded-full px-4 py-2.5 border border-[#0000001a] -outline-offset-2 outline-none"
+            type="text"
+            placeholder="Search"
+            name="q"
+            value="{{ search.terms | escape }}"
+          >
+          <button
+            type="submit"
+            class="text-white absolute right-0 w-10 h-10 rounded-full bg-[#333333] hover:bg-[#f5ab1e]"
+          >
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
+
+      <div class="w-1/3">
+        <ul class="flex items-center gap-5 justify-end ">
+          <li>
+            <div class="hidden lg:flex items-center gap-2">
+              <a href="/account" class="text-3xl text-[#333333] hover:text-[#f5ab1e]" aria-label="Account">
+                <i class="fa-regular fa-user"></i>
+              </a>
+              <div class="flex flex-col items-start">
+                <a
+                  href="/account"
+                  class="block text-xs font-semibold uppercase hover:text-[#f5ab1e]"
+                  aria-label="Account"
+                  >Account</a
+                >
+                <div class="flex items-center">
+                  <a
+                    href="/account/register"
+                    class="text-[11px] text-[#333333] pr-2 mr-2 border-r border-gray-300 hover:text-[#f5ab1e]"
+                    aria-label="Register"
+                    >Register</a
+                  >
+                  <a href="/account/login" class="text-[11px] text-[#333333] hover:text-[#f5ab1e]" aria-label="Login"
+                    >Login</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="flex lg:hidden">
+              <div>
+                <div>
+                  <a href="/account/login" aria-label="Account"><i class="icon-user"></i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %}
+            <li>
+              <button
+                type="button"
+                class="text-[#f5ab1e]"
+                data-bs-toggle="modal"
+                data-bs-target="#searchmodal"
+                aria-label="Search button"
+              >
+                <i class="icon-magnifier"></i>
+              </button>
+            </li>
+          {% endcomment %}
+          <li>
+            <div>
+              <a
+                class="relative text-[#333333] text-3xl  hover:text-[#f5ab1e]"
+                href="/pages/wishlist"
+                title="Wishlist"
+              >
+                <i class="fa-regular fa-heart mr-2"></i>
+                <span class="absolute top-0 right-0 text-white text-xs font-semibold rounded-full bg-[#f5ab1e] h-5 w-5 flex items-center justify-center"
+                  >0</span
+                >
+              </a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div>
+                <a
+                  href="/cart"
+                  class="relative text-[#333333] text-3xl hover:text-[#f5ab1e]"
+                  id="ajax-cart-icon"
+                  aria-label="/cart"
+                  role="button"
+                  aria-haspopup="dialog"
+                >
+                  <i class="fa-solid fa-cart-shopping mr-2"></i>
+                  <div class="absolute top-0 right-0 text-white text-xs font-semibold rounded-full bg-[#f5ab1e] h-5 w-5 flex items-center justify-center">
+                    <span aria-hidden="true">0</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
+    <div class="border-t border-[#dee2e6] flex items-center justify-between">
+      <ul class="main-menu flex flex-wrap items-center">
+        {% for link in linklists[section.settings.menu].links %}
+          <li>
+            <a href="{{ link.url }}" class="px-5 py-4 text-[#333] block hover:text-[#f5ab1e] relative">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <a href="tel:12345678" class="flex items-center gap-2 text-[#333333] hover:text-[#f5ab1e]">
+        <span class="text-3xl">
+          <i class="fa-solid fa-headphones"></i>
+        </span>
+        <span class="flex flex-col items-start">
+          <span class="block text-xs font-semibold uppercase ">Hotline: </span>
 
-    <!-- Dynamic Menu -->
-    <ul class="navbar-menu">
-      {% for link in linklists[section.settings.menu].links %}
-        <li class="navbar-item">
-          <a href="{{ link.url }}" class="navbar-link">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-
-    <!-- Dynamic Action Button -->
-    <a href="{{ section.settings.button_url }}" class="navbar-action-button">
-      {{ section.settings.button_text }}
-    </a>
+          <span class="text-[11px] ">+12345678</span>
+        </span>
+      </a>
+    </div>
   </div>
 </div>
 

@@ -1,8 +1,9 @@
 <html>
   <head>
     {{ content_for_header }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
-    {{ 'navbar.css' | asset_url | stylesheet_tag }}
+    {{ 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' | stylesheet_tag }}
   </head>
   <body>
     <header>
