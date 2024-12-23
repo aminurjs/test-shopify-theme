@@ -9,10 +9,6 @@
  */
 {
   "sections": {
-    "banner": {
-      "type": "banner",
-      "settings": {}
-    },
     "product_grid_XRdXr6": {
       "type": "product-grid",
       "settings": {
@@ -26,7 +22,6 @@
     }
   },
   "order": [
-    "banner",
     "product_grid_XRdXr6"
   ]
 }
