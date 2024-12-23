@@ -23,9 +23,11 @@
           "grey-sofa"
         ]
       }
+    },
+    "banner": {
+      "type": "banner",
+      "settings": {}
     }
   },
-  "order": [
-    "product_grid_XRdXr6"
-  ]
+  "order": ["banner", "product_grid_XRdXr6"]
 }
