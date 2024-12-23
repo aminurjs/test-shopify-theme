@@ -16,7 +16,7 @@
           "logo": "shopify://shop_images/logo-1.svg",
           "menu": "secondary-menu",
           "button_text": "Shop Now",
-          "button_url": "shopify://collections/all"
+          "button_url": "shopify://collections"
         }
       }
     },
