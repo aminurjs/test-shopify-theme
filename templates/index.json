@@ -34,24 +34,7 @@
           "grey-sofa"
         ]
       }
-    },
-    "product_slider_xB9dAd": {
-      "type": "product-slider",
-      "settings": {
-        "slider_title": "Trending Products",
-        "products": [
-          "knitted-throw-pillows",
-          "gardening-hand-trowel",
-          "grey-sofa",
-          "copper-light",
-          "clay-plant-pot"
-        ]
-      }
     }
   },
-  "order": [
-    "hero_bF9Ae3",
-    "product_grid_XRdXr6",
-    "product_slider_xB9dAd"
-  ]
+  "order": ["hero_bF9Ae3", "product_grid_XRdXr6"]
 }
