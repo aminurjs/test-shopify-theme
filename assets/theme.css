@@ -17,3 +17,15 @@ li,
 blockquote {
   font-family: "Poppins", serif;
 }
+.trending-products {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.product-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}

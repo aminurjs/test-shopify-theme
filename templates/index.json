@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "hero_bF9Ae3": {
+      "type": "hero",
+      "settings": {
+        "background_image": "shopify://shop_images/bg.jpg",
+        "title": "Fresh For Your  Health",
+        "subtitle": "Top Sellign",
+        "button_text": "Shop Now",
+        "button_url": "/shop",
+        "content_alignment": "center"
+      }
+    },
     "product_grid_XRdXr6": {
       "type": "product-grid",
       "settings": {
@@ -25,5 +36,8 @@
       }
     }
   },
-  "order": ["product_grid_XRdXr6"]
+  "order": [
+    "hero_bF9Ae3",
+    "product_grid_XRdXr6"
+  ]
 }
